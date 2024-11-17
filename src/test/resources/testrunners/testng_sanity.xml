@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="API sanity Suite" verbose="3">
+
+	<test name="Create User Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+		<classes>
+			<class name="com.qa.api.tests.CreateUserTest" />
+		</classes>
+	</test>
+	<test name="GET User Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+		<classes>
+
+			<class name="com.qa.api.tests.GetUserTest" />
+		</classes>
+	</test>
+	<test name="Update User Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+		<classes>
+
+			<class name="com.qa.api.tests.UpdateUserTest" />
+		</classes>
+	</test>
+
+	<test name="Partial Update User Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+		<classes>
+
+			<class name="com.qa.api.tests.PatchUserTest" />
+		</classes>
+	</test>
+	<test name="Delete Update User Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+		<classes>
+			<class name="com.qa.api.tests.DeleteUserTest" />
+		</classes>
+	</test>
+
+	<!-- comment in between lines -->
+	<test name="Req Res GET User Test">
+		<parameter name="baseUrl" value="https://reqres.in" />
+		<classes>
+			<class name="com.qa.reqres.api.tests.ReqResTest" />
+		</classes>
+	</test>
+
+	<test name="Contacts API Test">
+		<parameter name="baseUrl" value="https://thinking-tester-contact-list.herokuapp.com" />
+		<classes>
+			<class name="com.qa.contacts.api.tests.ContactAPITest" />
+		</classes>
+	</test>
+	<test name="Product API Test">
+		<parameter name="baseUrl" value="https://fakestoreapi.com" />
+		<classes>
+			<class name="com.qa.products.api.tests.ProductApiTest" />
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="API Regression Suite" verbose="3">
+
+	<listeners>
+		<listener
+			class-name="com.qa.api.listeners.ExtentReportListener" />
+
+	</listeners>
+
+	<test name="Create User Test">
+		
+		<classes>
+			<class name="com.qa.api.tests.CreateUserTest" />
+		</classes>
+	</test>
+	<test name="GET User Test">
+		
+		<classes>
+			<class name="com.qa.api.tests.GetUserTest" />
+		</classes>
+	</test>
+	<test name="Update User Test">
+		<classes>
+			<class name="com.qa.api.tests.UpdateUserTest" />
+		</classes>
+	</test>
+
+	<test name="Partial Update User Test">
+		<classes>
+			<class name="com.qa.api.tests.PatchUserTest" />
+		</classes>
+	</test>
+	<test name="Delete Update User Test">
+		<classes>
+			<class name="com.qa.api.tests.DeleteUserTest" />
+		</classes>
+	</test>
+
+	<!-- comment in between lines -->
+	<test name="Req Res GET User Test">
+		<classes>
+			<class name="com.qa.reqres.api.tests.ReqResTest" />
+		</classes>
+	</test>
+
+	<test name="Contacts API Test">
+		<classes>
+			<class name="com.qa.contacts.api.tests.ContactAPITest" />
+		</classes>
+	</test>
+	<test name="Product API Test">
+		<classes>
+			<class name="com.qa.products.api.tests.ProductApiTest" />
+		</classes>
+	</test>
+
+	<test name="Amadues API Test">
+		<classes>
+			<class name="com.qa.amadues.test.AmaduesAPITest" />
+		</classes>
+	</test>
+
+</suite>
