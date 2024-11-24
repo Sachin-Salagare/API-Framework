@@ -17,6 +17,8 @@ public class MockDeleteUserAPITest  extends BaseTest{
 	 Response response=restclient.delete(BASE_URL_LOCALHOST_PORT, "/user/users/1", null, null, AuthType.No_AUTH, ContentType.ANY);
 	  response.then()
 	  .assertThat()
-	  .statusCode(204);
+	  .statusCode(204)
+	
+	  ;
   }
 }

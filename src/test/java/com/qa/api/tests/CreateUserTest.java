@@ -3,6 +3,7 @@ package com.qa.api.tests;
 import java.io.File;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.api.base.BaseTest;
@@ -17,17 +18,27 @@ import io.restassured.response.Response;
 
 public class CreateUserTest extends BaseTest{
 	
-	// this is using lombok builder
-  @Test 
-  public void creatUser() {
+	@DataProvider
+  public Object[][] getUserData() {
+	  return new Object[][] {
+		  {"sachin","male","active"},
+		  {"jhone","male","inactive"},
+		  {"reena","female","active"}
+	  };
+  }	
+	
+	
+
+  @Test (dataProvider = "getUserData")
+  public void creatUser(String name, String gender,String status) {
 	  
-	  GoRestUser user=new GoRestUser(null,"Sachin", StringUtility.getRandomEmailId(), "male", "active");
+	  GoRestUser user=new GoRestUser(null,name, StringUtility.getRandomEmailId(), gender, status);
 	 Response response =restclient.post(BASE_URL_GOREST,"/public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 	 Assert.assertEquals(response.statusCode(), 201);
 	 
   }
 	// this is using builder pattern
-  @Test 
+  @Test ()
   public void creatUserWithBuilder() {
 	  //post
 	 GoRestUser user= GoRestUser.builder()
@@ -52,7 +63,7 @@ public class CreateUserTest extends BaseTest{
 	 
   }	
 // create user with json file
-  @Test 
+  @Test (enabled = false)
   public void creatUserWithJsonFile() {
 	  
 	  File userJsonFile=new File(".\\src\\test\\resources\\jsons\\gorestUser.json");
